@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'cyber': ['Orbitron', 'monospace'],
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,30 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Cyberpunk theme extensions
+        'cyber': {
+          'glow': "hsl(var(--cyber-glow))",
+          'glow-soft': "hsl(var(--cyber-glow-soft))",
+        },
+        'game': {
+          'spade': "hsl(var(--game-spade))",
+          'diamond': "hsl(var(--game-diamond))",
+          'club': "hsl(var(--game-club))",
+          'heart': "hsl(var(--game-heart))",
+        },
+      },
+      backgroundImage: {
+        'gradient-cyber': 'var(--gradient-cyber)',
+        'gradient-red': 'var(--gradient-red)',
+      },
+      boxShadow: {
+        'glow': 'var(--gradient-glow)',
+        'cyber': '0 0 20px hsl(var(--cyber-glow) / 0.3)',
+        'cyber-strong': '0 0 40px hsl(var(--cyber-glow) / 0.5)',
+      },
+      animation: {
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'pulse-red': 'pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +93,25 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "glow": {
+          "0%": { boxShadow: "0 0 5px hsl(var(--cyber-glow) / 0.2)" },
+          "100%": { boxShadow: "0 0 20px hsl(var(--cyber-glow) / 0.6), 0 0 30px hsl(var(--cyber-glow) / 0.4)" },
+        },
+        "pulse-red": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
+        "cyber-flicker": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.8" },
+        },
       },
     },
   },
