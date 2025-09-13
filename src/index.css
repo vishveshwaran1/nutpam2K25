@@ -7,6 +7,17 @@ Stark, high-contrast, minimalist, futuristic theme inspired by Alice in Borderla
 All colors MUST be HSL.
 */
 
+@font-face {
+  font-family: "Nuptamttf";
+  src: url(../public/Takoyaki.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Nuptam";
+  src: url(../public/Takoyaki.woff2) format("woff2"),
+    url(../public/Takoyaki.woff) format("woff");
+  font-weight: normal;
+}
 @layer base {
   :root {
     /* Core Theme: Black/White/Red Cyberpunk */
@@ -51,7 +62,7 @@ All colors MUST be HSL.
     --game-diamond: 0 100% 50%;
     --game-club: 0 0% 100%;
     --game-heart: 0 100% 50%;
-    
+
     /* Gradients */
     --gradient-cyber: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 5%));
     --gradient-red: linear-gradient(135deg, hsl(0 100% 50%), hsl(0 100% 40%));
@@ -124,11 +135,13 @@ All colors MUST be HSL.
 
   /* Typography */
   .font-cyber {
-    font-family: 'Orbitron', monospace;
+    font-family: "Orbitron", monospace;
   }
-
+  .font-nuptam {
+    font-family: "Nuptamttf", sans-serif;
+  }
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 
   /* Cyber glitch effect */
@@ -138,14 +151,23 @@ All colors MUST be HSL.
   }
 
   .cyber-glow:hover {
-    text-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.8), 0 0 30px hsl(var(--cyber-glow) / 0.4);
+    text-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.8),
+      0 0 30px hsl(var(--cyber-glow) / 0.4);
   }
 
   /* Game suit colors */
-  .text-spade { color: hsl(var(--game-spade)); }
-  .text-diamond { color: hsl(var(--game-diamond)); }
-  .text-club { color: hsl(var(--game-club)); }
-  .text-heart { color: hsl(var(--game-heart)); }
+  .text-spade {
+    color: hsl(var(--game-spade));
+  }
+  .text-diamond {
+    color: hsl(var(--game-diamond));
+  }
+  .text-club {
+    color: hsl(var(--game-club));
+  }
+  .text-heart {
+    color: hsl(var(--game-heart));
+  }
 
   /* Smooth scrolling for navigation */
   html {

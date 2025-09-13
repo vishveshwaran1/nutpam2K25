@@ -35,7 +35,7 @@ const About = () => {
 
           {/* Right Column - Phone UI */}
           <div className="flex justify-center">
-            <PhoneUI selectedGame={null} />
+            <PhoneUI selectedGame={null} timer={true} />
           </div>
         </div>
       </div>

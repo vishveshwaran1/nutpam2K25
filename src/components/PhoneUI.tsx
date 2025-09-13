@@ -11,9 +11,10 @@ interface GameData {
 
 interface PhoneUIProps {
   selectedGame: GameData | null;
+  timer: boolean | null;
 }
 
-const PhoneUI = ({ selectedGame }: PhoneUIProps) => {
+const PhoneUI = ({ selectedGame, timer }: PhoneUIProps) => {
   return (
     <div className="relative">
       {/* Phone Frame */}
@@ -59,17 +60,25 @@ const PhoneUI = ({ selectedGame }: PhoneUIProps) => {
                 </p>
               </div>
 
-              <Button 
-                variant="cyber" 
+              <Button
+                variant="cyber"
                 className="w-full font-cyber text-sm"
                 onClick={() => window.open("#register", "_blank")}
               >
                 REGISTER FOR THIS GAME
               </Button>
             </div>
-          ) : (
+          ) : timer ? (
             /* Default Countdown */
             <CountdownTimer />
+          ) : (
+            <>
+              <div className="flex justify-center items-center h-full">
+                <h1 className="font-cyber text-lg text-primary tracking-wider mb-2">
+                  Select a Game
+                </h1>
+              </div>
+            </>
           )}
         </div>
 
