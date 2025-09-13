@@ -61,7 +61,7 @@ const Events = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className=" items-start">
           {/* Left Side - Game Cards */}
           <div className="grid grid-cols-2 gap-6">
             <GameCard
@@ -98,8 +98,8 @@ const Events = () => {
           </div>
 
           {/* Right Side - Phone UI */}
-          <div className="flex justify-center lg:justify-end">
-            <PhoneUI selectedGame={selectedGame} />
+          <div className="flex justify-center mt-10 md:mt-10">
+            <PhoneUI selectedGame={selectedGame} timer={null} />
           </div>
         </div>
       </div>
