@@ -2,134 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* NuTPAM 2k25 - Cyberpunk Design System
-Stark, high-contrast, minimalist, futuristic theme inspired by Alice in Borderland
-All colors MUST be HSL.
-*/
+/* NuTPAM 2k25 - Alice in Borderland / Cyber-Mystery Theme */
 
-@font-face {
-  font-family: "Nuptamttf";
-  src: url(../public/Takoyaki.ttf) format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Nuptam";
-  src: url(../public/Takoyaki.woff2) format("woff2"),
-    url(../public/Takoyaki.woff) format("woff");
-  font-weight: normal;
-}
+/* Google Fonts for headings and body */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
 @layer base {
   :root {
-    /* Core Theme: Black/White/Red Cyberpunk */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-
-    --card: 0 0% 3%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-
-    /* Primary: Pure Red for CTAs and accents */
-    --primary: 0 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    /* Secondary: Dark grays for subtle elements */
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-
-    /* Muted: Dark grays for less important content */
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 70%;
-
-    /* Accent: Red variations */
-    --accent: 0 100% 45%;
-    --accent-foreground: 0 0% 100%;
-
-    /* Destructive: Keep red theme */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders: Subtle white/gray */
-    --border: 0 0% 20%;
+    /* Core Theme: Dark, Red, Japanese-inspired */
+    --background: 0 0% 5%;        /* Dark gray-black */
+    --foreground: 0 0% 95%;       /* Light cream/white */
+    
+    --card: 0 0% 15%;             /* Slightly lighter dark */
+    --card-foreground: 0 0% 95%;
+    
+    --primary: 0 100% 50%;        /* Pure red */
+    --primary-foreground: 0 0% 95%;
+    
+    --secondary: 0 0% 20%;        /* Dark gray accents */
+    --secondary-foreground: 0 0% 80%;
+    
+    --accent: 0 100% 45%;         /* Deep red accent */
+    --accent-foreground: 0 0% 95%;
+    
+    --destructive: 0 84% 60%;     /* Blood-red */
+    --destructive-foreground: 0 0% 95%;
+    
+    --border: 0 0% 25%;
     --input: 0 0% 15%;
     --ring: 0 100% 50%;
-
-    /* Design System Extensions */
-    --cyber-glow: 0 100% 50%;
+    
+    --cyber-glow: 0 100% 50%;     /* Neon red glow */
     --cyber-glow-soft: 0 100% 30%;
-    --game-spade: 0 0% 100%;
-    --game-diamond: 0 100% 50%;
-    --game-club: 0 0% 100%;
-    --game-heart: 0 100% 50%;
-
-    /* Gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 5%));
-    --gradient-red: linear-gradient(135deg, hsl(0 100% 50%), hsl(0 100% 40%));
-    --gradient-glow: 0 0 40px hsl(var(--cyber-glow) / 0.3);
-
-    /* Animations */
-    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: box-shadow 0.3s ease, color 0.3s ease;
-
+    
     --radius: 0.25rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Playing card colors */
+    --game-spade: 0 0% 95%;       /* white */
+    --game-diamond: 0 100% 50%;   /* red */
+    --game-club: 0 0% 95%;
+    --game-heart: 0 100% 50%;
+    
+    /* Gradients */
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 15%));
+    --gradient-red: linear-gradient(135deg, hsl(0 100% 50%), hsl(0 100% 30%));
+    
+    /* Animations */
+    --transition-cyber: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    --transition-glow: box-shadow 0.3s ease, color 0.3s ease;
   }
 
+  /* Dark theme overrides */
   .dark {
-    /* Same as light theme - we're using pure cyberpunk dark theme */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 3%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
     --primary: 0 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 8%;
-    --muted-foreground: 0 0% 70%;
     --accent: 0 100% 45%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
-    --ring: 0 100% 50%;
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 100% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 100% 50%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-inter;
     scroll-behavior: smooth;
   }
 
@@ -138,57 +76,64 @@ All colors MUST be HSL.
     font-family: "Orbitron", monospace;
   }
   .font-nuptam {
-    font-family: "Nuptamttf", sans-serif;
+    font-family: "Major Mono Display", monospace; /* Changed from Major Mono Display */
+    color: hsl(var(--primary));
   }
   .font-inter {
     font-family: "Inter", sans-serif;
   }
 
-  /* Cyber glitch effect */
-  .cyber-glow {
-    text-shadow: 0 0 10px hsl(var(--cyber-glow) / 0.5);
-    transition: var(--transition-glow);
-  }
+  /* Cyber glow / neon effect */
+  /* Cyber glow / neon effect with white text and red glow */
+.cyber-glow {
+  color: hsl(0 0% 100%); /* White text */
+  text-shadow:
+    0 0 5px hsl(0 100% 50% / 0.5),  /* Red glow */
+    0 0 10px hsl(0 100% 50% / 0.3),
+    0 0 20px hsl(0 100% 50% / 0.2);
+  transition: var(--transition-glow);
+}
 
-  .cyber-glow:hover {
-    text-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.8),
-      0 0 30px hsl(var(--cyber-glow) / 0.4);
-  }
+.cyber-glow:hover {
+  text-shadow:
+    0 0 20px hsl(0 100% 50% / 0.8),
+    0 0 30px hsl(0 100% 50% / 0.4),
+    0 0 40px hsl(0 100% 50% / 0.2);
+}
 
-  /* Game suit colors */
-  .text-spade {
-    color: hsl(var(--game-spade));
+/* Flicker animation for white text + red glow */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px hsl(0 100% 50%),
+      0 0 16px hsl(0 100% 50%),
+      0 0 24px hsl(0 100% 50%);
   }
-  .text-diamond {
-    color: hsl(var(--game-diamond));
+  20%, 22%, 24%, 55% {
+    opacity: 0.4;
+    text-shadow: none;
   }
-  .text-club {
-    color: hsl(var(--game-club));
-  }
-  .text-heart {
-    color: hsl(var(--game-heart));
-  }
+}
 
-  /* Smooth scrolling for navigation */
-  html {
-    scroll-behavior: smooth;
-  }
+.animate-flicker {
+  animation: flicker 2s infinite;
+}
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
+/* Glitch animation remains the same */
+.animate-glitch {
+  animation: glitch 1.5s infinite;
+}
 
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
+  /* Playing card / suit colors */
+  .text-spade { color: hsl(var(--game-spade)); }
+  .text-diamond { color: hsl(var(--game-diamond)); }
+  .text-club { color: hsl(var(--game-club)); }
+  .text-heart { color: hsl(var(--game-heart)); }
 
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary));
-  }
+  /* Scrollbar customization */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
 }

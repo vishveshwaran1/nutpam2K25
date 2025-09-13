@@ -15,58 +15,36 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
 
-        <h1 className=" font-nuptam text-6xl md:text-8xl font-black mb-6 cyber-glow">
+        {/* Logo on top */}
+        <img
+          src="/logo.png"
+          alt="logo"
+          className="h-40 w-auto mx-auto transition-all duration-300 ease-in-out transform hover:scale-105 cyber-glow animate-flicker"
+          style={{
+            filter:
+              "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))",
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.filter =
+              "drop-shadow(0 0 12px rgba(239,68,68,1)) drop-shadow(0 0 28px rgba(239,68,68,0.7)) drop-shadow(0 0 48px rgba(239,68,68,0.4))")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.filter =
+              "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))")
+          }
+        />
 
-          
-  
-
-  <img
-  src="/logo.png"
-  alt="logo"
-  className="h-40 w-auto mx-auto my-20 transition-all duration-300 ease-in-out transform hover:scale-105"
-  style={{
-    filter:
-      "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))",
-  }}
-  onMouseEnter={(e) =>
-    (e.currentTarget.style.filter =
-      "drop-shadow(0 0 12px rgba(239,68,68,1)) drop-shadow(0 0 28px rgba(239,68,68,0.7)) drop-shadow(0 0 48px rgba(239,68,68,0.4))")
-  }
-  onMouseLeave={(e) =>
-    (e.currentTarget.style.filter =
-      "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))")
-  }
-/>
-
-
-
-
-
-
-
-
-
-          NuTPAM 2k25
-        </h1>
-
-        <p className="font-inter text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto">
-          Welcome, Players. The Game is About to Begin.
-        </p>
-
-        <Button
-          variant="cyber"
-          size="lg"
-          onClick={() => window.open("#register", "_blank")}
-          className="font-cyber text-lg px-8 py-4"
-        >
-          REGISTER NOW
-        </Button>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        {/* Text and Button */}
+        <div className="text-center mt-8 md:mt-12 px-4">
+          <h1 className="font-nuptam text-5xl sm:text-6xl md:text-7xl lg:text-8xl cyber-glow animate-flicker">
+            NuTPAM 2k25
+          </h1>
+          <h2 className="font-cyber text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-diamond cyber-glow mt-6 animate-glitch">
+            Welcome, Players. The Game is About to Begin.
+          </h2>
+          <button className="mt-8 px-6 py-3 bg-red-600 text-white font-cyber uppercase tracking-wider hover:shadow-[0_0_20px_rgba(255,0,0,0.8)] transition-shadow">
+            Register Now
+          </button>
         </div>
       </div>
     </section>
