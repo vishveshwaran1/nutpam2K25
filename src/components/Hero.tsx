@@ -18,12 +18,10 @@ const Hero = () => {
         <h1 className=" font-nuptam text-6xl md:text-8xl font-black mb-6 cyber-glow">
 
           
-  
-
-  <img
+ <img
   src="/logo.png"
   alt="logo"
-  className="h-40 w-auto mx-auto my-20 transition-all duration-300 ease-in-out transform hover:scale-105"
+  className="h-64 w-auto mx-auto transition-all duration-300 ease-in-out transform hover:scale-105"
   style={{
     filter:
       "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))",
@@ -37,14 +35,6 @@ const Hero = () => {
       "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))")
   }
 />
-
-
-
-
-
-
-
-
 
           NuTPAM 2k25
         </h1>
@@ -64,11 +54,11 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
