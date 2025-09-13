@@ -54,7 +54,7 @@ const Events = () => {
 
   return (
     <section id="events" className="py-20">
-      <div className="container h-[90vh] mx-auto px-6 flex flex-col justify-center items-center md:block">
+      <div className="container h-screen mx-auto px-4 flex flex-col justify-center items-center md:block">
         <div className="text-center mb-16">
           <h2 className="font-cyber text-4xl font-bold cyber-glow mb-4">
             Choose Your Game
