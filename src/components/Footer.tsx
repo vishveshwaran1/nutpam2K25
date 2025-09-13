@@ -57,8 +57,8 @@ const Footer = () => {
                   <p className="text-foreground font-semibold">Location</p>
                   <p className="text-muted-foreground">
                     Sri Sairam Institute of Technology<br />
-                    Technical Campus<br />
-                    University District
+                    Sai Leo Nagar<br />
+                    West Tambaram, Chennai - 600044<br />
                   </p>
                 </div>
               </div>
@@ -68,8 +68,8 @@ const Footer = () => {
                 <div>
                   <p className="text-foreground font-semibold">Contact</p>
                   <p className="text-muted-foreground">
-                    nutpam2k25@university.edu<br />
-                    +1 (555) 123-4567
+                    nutpam@sairamit.edu.in<br />
+                    {/* +1 (555) 123-4567 */}
                   </p>
                 </div>
               </div>
