@@ -14,7 +14,38 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+
         <h1 className=" font-nuptam text-6xl md:text-8xl font-black mb-6 cyber-glow">
+
+          
+  
+
+  <img
+  src="/logo.png"
+  alt="logo"
+  className="h-40 w-auto mx-auto my-20 transition-all duration-300 ease-in-out transform hover:scale-105"
+  style={{
+    filter:
+      "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))",
+  }}
+  onMouseEnter={(e) =>
+    (e.currentTarget.style.filter =
+      "drop-shadow(0 0 12px rgba(239,68,68,1)) drop-shadow(0 0 28px rgba(239,68,68,0.7)) drop-shadow(0 0 48px rgba(239,68,68,0.4))")
+  }
+  onMouseLeave={(e) =>
+    (e.currentTarget.style.filter =
+      "drop-shadow(0 0 6px rgba(239,68,68,0.8)) drop-shadow(0 0 14px rgba(239,68,68,0.4))")
+  }
+/>
+
+
+
+
+
+
+
+
+
           NuTPAM 2k25
         </h1>
 

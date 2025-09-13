@@ -30,9 +30,11 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="font-cyber text-xl font-bold cyber-glow">
-            NuTPAM 2k25
-          </div>
+          
+         <div className="font-cyber text-xl font-bold cyber-glow flex items-center gap-2">
+  <img src="/logo.png" alt="logo" className="h-8 w-8" />
+  NuTPAM 2k25
+</div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
