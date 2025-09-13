@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+
 import CountdownTimer from "./CountdownTimer";
 
 interface GameData {
@@ -17,7 +17,7 @@ const PhoneUI = ({ selectedGame, timer }: PhoneUIProps) => {
   return (
     <div className="relative">
       {/* Phone Frame */}
-      <div className="w-80 h-[600px] bg-card border-2 border-border rounded-[3rem] p-6 flex flex-col shadow-cyber">
+      <div className="w-80 h-[550px] bg-card border-2 border-border rounded-[3rem] p-6 flex flex-col shadow-cyber">
         {/* Phone Screen */}
         <div className="flex-1 bg-background border border-border rounded-2xl p-6 flex flex-col justify-center">
           {selectedGame ? (
