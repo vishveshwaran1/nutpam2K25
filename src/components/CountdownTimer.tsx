@@ -46,7 +46,7 @@ const CountdownTimer = () => {
         TIME UNTIL FIRST GAME COMMENCES
       </h3>
       
-      <div className="font-cyber text-xs md:text-xl font-bold text-foreground">
+      <div className="font-cyber text-xl md:text-xl font-bold text-foreground">
         {formatNumber(timeLeft.days)} : {formatNumber(timeLeft.hours)} : {formatNumber(timeLeft.minutes)} : {formatNumber(timeLeft.seconds)}
       </div>
       
