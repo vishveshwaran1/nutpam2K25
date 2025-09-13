@@ -9,7 +9,7 @@ interface TimeLeft {
 
 const CountdownTimer = () => {
   // Set target date (you can modify this to the actual event date)
-  const targetDate = new Date("2025-02-15T10:00:00").getTime();
+  const targetDate = new Date("2025-10-10T10:00:00").getTime();
   
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -25,7 +25,7 @@ const CountdownTimer = () => {
 
       if (difference > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          days:  Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000),
@@ -46,11 +46,11 @@ const CountdownTimer = () => {
         TIME UNTIL FIRST GAME COMMENCES
       </h3>
       
-      <div className="font-cyber text-3xl md:text-4xl font-bold text-foreground">
+      <div className="font-cyber text-xs md:text-xl font-bold text-foreground">
         {formatNumber(timeLeft.days)} : {formatNumber(timeLeft.hours)} : {formatNumber(timeLeft.minutes)} : {formatNumber(timeLeft.seconds)}
       </div>
       
-      <div className="flex justify-center gap-8 mt-2 text-xs text-muted-foreground font-inter">
+      <div className="flex justify-center gap-4 mt-2 text-xs text-muted-foreground font-inter">
         <span>DAYS</span>
         <span>HOURS</span>
         <span>MINUTES</span>

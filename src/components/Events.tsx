@@ -54,7 +54,7 @@ const Events = () => {
 
   return (
     <section id="events" className="py-20">
-      <div className="container mx-auto px-6 flex flex-col justify-center items-center md:block">
+      <div className="container h-[90vh] mx-auto px-6 flex flex-col justify-center items-center md:block">
         <div className="text-center mb-16">
           <h2 className="font-cyber text-4xl font-bold cyber-glow mb-4">
             Choose Your Game
@@ -65,7 +65,7 @@ const Events = () => {
           </p>
         </div>
 
-        <div className=" flex justify-around items-start max-sm:flex-col sm:flex-col md:flex-row md:space-x-10">
+        <div className=" h-[60vh] flex justify-around items-start max-sm:flex-col sm:flex-col md:flex-row md:space-x-10">
           {/* Left Side - Game Cards */}
           <div className="grid  gap-6 max-sm:grid-cols-4  sm:grid-cols-4 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1">
             <GameCard
@@ -102,7 +102,7 @@ const Events = () => {
           </div>
 
           {/* Right Side - Phone UI */}
-          <div className="flex justify-center mt-10 md:mt-10 max-sm:w-full sm:w-full md:w-0 md:mt-0 lg:w-auto">
+          <div className=" h-[60vh] flex justify-center mt-10 md:mt-0 max-sm:w-full sm:w-full md:w-0  lg:w-auto">
             <PhoneUI selectedGame={selectedGame} timer={null} />
           </div>
         </div>
