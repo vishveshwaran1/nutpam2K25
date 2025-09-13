@@ -25,8 +25,8 @@ const GameCard = ({ symbol, title, isActive, onClick, symbolColor }: GameCardPro
         <div className={`text-4xl mb-4 ${colorClass} group-hover:scale-110 transition-transform duration-300`}>
           {symbol}
         </div>
-        
-        <h3 className="font-cyber text-sm font-semibold leading-tight">
+
+        <h3 className="font-cyber text-sm font-semibold leading-tight max-sm:hidden sm:hidden md:block lg:block">
           {title}
         </h3>
       </div>

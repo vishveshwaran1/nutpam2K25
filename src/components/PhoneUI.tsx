@@ -4,8 +4,7 @@ import CountdownTimer from "./CountdownTimer";
 interface GameData {
   name: string;
   difficulty: string;
-  condition: string;
-  timeLimit: string;
+  Events: string[];
   suit: string;
 }
 
@@ -44,29 +43,14 @@ const PhoneUI = ({ selectedGame, timer }: PhoneUIProps) => {
 
               <div>
                 <h3 className="font-cyber text-sm text-primary tracking-wider mb-2">
-                  CLEAR CONDITION
+                  EVENTS
                 </h3>
-                <p className="font-inter text-sm text-muted-foreground leading-relaxed">
-                  {selectedGame.condition}
-                </p>
+                <ul className="font-cyber text-sm text-muted-foreground leading-relaxed">
+                  {selectedGame.Events.map((event, index) => (
+                    <li key={index}>{event}</li>
+                  ))}
+                </ul>
               </div>
-
-              <div>
-                <h3 className="font-cyber text-sm text-primary tracking-wider mb-2">
-                  TIME LIMIT
-                </h3>
-                <p className="font-cyber text-lg text-foreground">
-                  {selectedGame.timeLimit}
-                </p>
-              </div>
-
-              <Button
-                variant="cyber"
-                className="w-full font-cyber text-sm"
-                onClick={() => window.open("#register", "_blank")}
-              >
-                REGISTER FOR THIS GAME
-              </Button>
             </div>
           ) : timer ? (
             /* Default Countdown */
