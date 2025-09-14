@@ -90,9 +90,7 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  .scroll::-webkit-scrollbar {
-    display: none;
-  }
+ 
 
   .dark {
     /* Same as light theme - we're using pure cyberpunk dark theme */
