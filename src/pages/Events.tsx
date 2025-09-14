@@ -7,7 +7,7 @@ const EventsPage = () => {
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-hidden">
       <Header />
-      
+       <div className="h-16"></div>
       {/* Events Section */}
       <Events />
       
