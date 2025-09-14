@@ -15,17 +15,17 @@ interface PhoneUIProps {
 
 const PhoneUI = ({ selectedGame, timer }: PhoneUIProps) => {
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-sm mx-auto xl:sticky xl:top-8 xl:h-fit  xl:max-h-[calc(100vh-4rem)]">
       {/* Phone Frame */}
-      <div className="w-80 h-[600px] bg-card border-2 border-border rounded-[3rem] p-6 flex flex-col shadow-cyber">
+      <div className="w-full max-w-80 h-[600px]  sm:h-[650px] xl:h-[calc(100vh-8rem)]  xl:max-h-[700px] bg-card/80 backdrop-blur-md border-2 border-border rounded-[3rem] p-3 sm:p-4 xl:p-6 flex flex-col shadow-cyber-strong mx-auto hover:shadow-cyber-pulse transition-all duration-300">
         {/* Phone Screen */}
-        <div className="flex-1 bg-background border border-border rounded-2xl p-6 flex flex-col justify-center">
+        <div className="flex-1 bg-background border border-border rounded-2xl p-2 sm:p-3 xl:p-4 overflow-hidden min-h-0 ">
           {selectedGame ? (
-            /* Game Details */
-            <div className="text-center space-y-6">
-              <div>
-                <h3 className="font-cyber text-sm text-primary tracking-wider mb-2">
-                  GAME
+            /* Selected Event Details */
+            <div className="space-y-2 sm:space-y-3 xl:space-y-4 h-full overflow-y-auto pr-1 scrollbar-hide scroll">
+              <div className="text-center border-b border-border pb-2">
+                <h3 className="font-cyber text-xs text-primary tracking-wider mb-1">
+                  EVENT DETAILS
                 </h3>
                 <h2 className="font-cyber text-xl font-bold text-foreground">
                   {selectedGame.name}
@@ -54,7 +54,9 @@ const PhoneUI = ({ selectedGame, timer }: PhoneUIProps) => {
             </div>
           ) : timer ? (
             /* Default Countdown */
-            <CountdownTimer />
+            <div className="flex justify-center items-center h-full">
+              <CountdownTimer />
+            </div>
           ) : (
             <>
               <div className="flex justify-center items-center h-full">

@@ -2,10 +2,8 @@ import { Github, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   const staffCoordinators = [
-    "Dr. Sarah Chen",
-    "Prof. Rajesh Kumar", 
-    "Dr. Emily Watson",
-    "Prof. Michael Zhang"
+    "Mr J Pathmanaban",
+    "Ms Roopa D",
   ];
 
   const studentCoordinators = [
