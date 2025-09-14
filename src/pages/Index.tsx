@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Events from "@/components/Events";
 import Sponsors from "@/components/Sponsors";
-import Footer from "@/components/Footer";
-import BackgroundModel from "@/components/Background"; // <-- add this
+import Footer from "@/components/Footer";// <-- add this
+import EventCards from "@/components/card";
 
 const Index = () => {
   return (
@@ -15,6 +15,7 @@ const Index = () => {
       <Hero />
       <About />
       <Events />
+      {/* <EventCards /> */}
       <Sponsors />
       <Footer />
     </div>

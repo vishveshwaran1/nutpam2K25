@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="hero"
@@ -43,14 +46,25 @@ const Hero = () => {
           Welcome, Players. The Game is About to Begin.
         </p>
 
-        <Button
-          variant="cyber"
-          size="lg"
-          onClick={() => window.open("#register", "_blank")}
-          className="font-cyber text-lg px-8 py-4"
-        >
-          REGISTER NOW
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button
+            variant="cyber"
+            size="lg"
+            onClick={() => navigate("/events")}
+            className="font-cyber text-lg px-8 py-4"
+          >
+            VIEW EVENTS
+          </Button>
+          
+          <Button
+            variant="cyber"
+            size="lg"
+            onClick={() => window.open("#register", "_blank")}
+            className="font-cyber text-lg px-8 py-4"
+          >
+            REGISTER NOW
+          </Button>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
