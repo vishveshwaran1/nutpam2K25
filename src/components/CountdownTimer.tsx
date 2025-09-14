@@ -38,10 +38,10 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, [targetDate]);
 
-  const formatNumber = (num: number) => String(num).padStart(2, '0');
+  const formatNumber = (num: number) => String(num).padStart(2, "0");
 
   return (
-    <div className="text-center">
+    <div className="  text-center">
       <h3 className="font-cyber text-sm mb-4 text-primary tracking-wider">
         TIME UNTIL FIRST GAME COMMENCES
       </h3>
