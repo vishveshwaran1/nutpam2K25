@@ -56,19 +56,19 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button
+          {/* <Button
             variant="cyber"
             size="lg"
             onClick={() => navigate("/events")}
             className="font-cyber text-lg px-8 py-4"
           >
             VIEW EVENTS
-          </Button>
+          </Button> */}
 
           <Button
             variant="cyber"
             size="lg"
-            onClick={() => window.open("#register", "_blank")}
+            onClick={() => navigate("/events")}
             className="font-cyber text-lg px-8 py-4"
           >
             REGISTER NOW
