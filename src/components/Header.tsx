@@ -19,9 +19,7 @@ const Header = () => {
   const handleNavigation = (item: { label: string; id: string }) => {
     if (item.label === "Events") {
       navigate("/events");
-    } else if (item.label === "Home") {
-      navigate("/");
-    } else {
+    }  else {
       // For other sections, scroll to them if we're on the home page
       if (location.pathname === "/") {
         const element = document.getElementById(item.id);
@@ -77,31 +75,31 @@ const Header = () => {
             ))}
           </div>
           {/* {Mobile Menu} */}
-            <div
+          <div
             id="mobile-menu"
             className={`${
               mobileMenu ? "flex" : "hidden"
             } absolute right-4 top-16 md:hidden flex-col bg-background/95 backdrop-blur-md border border-border rounded-lg shadow-lg p-4 space-y-4`}
-            >
+          >
             {[
-              { label: "Home", id: "mobile-hero" },
-              { label: "About", id: "mobile-about" },
-              { label: "Events", id: "mobile-events" },
-              { label: "Sponsors", id: "mobile-sponsors" },
-              { label: "Contact", id: "mobile-contact" },
+              { label: "Home", id: "hero" },
+              { label: "About", id: "about" },
+              { label: "Events", id: "events" },
+              { label: "Sponsors", id: "sponsors" },
+              { label: "Contact", id: "contact" },
             ].map((item) => (
               <button
-              key={item.id}
-              onClick={() => {
-                handleNavigation(item);
-                setMobileMenu(false);
-              }}
-              className="text-foreground hover:text-primary transition-colors duration-300 font-inter font-medium text-left"
+                key={item.id}
+                onClick={() => {
+                  handleNavigation(item);
+                  setMobileMenu(false);
+                }}
+                className="text-foreground hover:text-primary transition-colors duration-300 font-inter font-medium text-left"
               >
-              {item.label}
+                {item.label}
               </button>
             ))}
-            </div>
+          </div>
           {/* Mobile Menu Button */}
 
           <button
