@@ -30,10 +30,10 @@ const PhoneUI = ({ selectedEvent, timer }: PhoneUIProps) => {
       {/* Phone Frame */}
       <div className="w-full max-w-80 h-[600px] sm:h-[650px] xl:h-[calc(100vh-8rem)] xl:max-h-[700px] bg-card/80 backdrop-blur-md border-2 border-border rounded-[3rem] p-3 sm:p-4 xl:p-6 flex flex-col shadow-cyber-strong mx-auto hover:shadow-cyber-pulse transition-all duration-300">
         {/* Phone Screen */}
-        <div className="flex-1 bg-background border border-border rounded-2xl p-2 sm:p-3 xl:p-4 overflow-hidden min-h-0">
+        <div className="flex-1 bg-background border border-border rounded-2xl p-2 sm:p-3 xl:p-4 overflow-hidden min-h-0 scroll" >
           {selectedEvent ? (
             /* Selected Event Details */
-            <div className="space-y-2 sm:space-y-3 xl:space-y-4 h-full overflow-y-auto">
+            <div className="space-y-2 sm:space-y-3 xl:space-y-4 h-full overflow-y-auto scroll">
               <div className="text-center border-b border-border pb-2">
                 <h3 className="font-cyber text-xs text-primary tracking-wider mb-1">
                   EVENT DETAILS
@@ -100,7 +100,9 @@ const PhoneUI = ({ selectedEvent, timer }: PhoneUIProps) => {
             </div>
           ) : timer ? (
             /* Default Countdown */
+           <div className="flex justify-center items-center h-full">
             <CountdownTimer />
+           </div>
           ) : (
             <div className="flex justify-center items-center h-full">
               <h1 className="font-cyber text-lg text-primary tracking-wider text-center">

@@ -31,16 +31,15 @@ const EventSelectionCard = ({
     <div className="w-full max-w-md mx-auto xl:max-w-none border-2 border-border rounded-xl p-2 sm:p-3 xl:p-4 space-y-2 xl:space-y-3 bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 h-[280px] sm:h-[300px] xl:max-h-[calc(50vh-2rem)] xl:overflow-hidden flex flex-col">
       {/* Header */}
       <div className="text-center space-y-1 flex-shrink-0">
-        <div className={`text-2xl sm:text-3xl xl:text-3xl ${colorClass} drop-shadow-lg`}>
+        <div
+          className={`text-2xl sm:text-3xl xl:text-3xl ${colorClass} drop-shadow-lg`}
+        >
           {symbol}
         </div>
         <h3 className="font-cyber text-xs xl:text-xs font-semibold leading-tight text-foreground px-2">
           {title}
         </h3>
-      </div>
-
-      {/* Events List */}
-      <div className="space-y-1 xl:space-y-2 flex-1 overflow-y-auto min-h-0">
+        <div className="h-3"></div>
         {events.map((event, index) => (
           <button
             key={index}
