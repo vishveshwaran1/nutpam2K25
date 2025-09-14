@@ -1,18 +1,15 @@
-import { Github, Linkedin, Twitter, Mail, MapPin } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, MapPin,Facebook,Instagram } from "lucide-react";
 
 const Footer = () => {
   const staffCoordinators = [
-    "Mr J Pathmanaban",
+    "Mr J pathmanaban",
     "Ms Roopa D",
   ];
 
   const studentCoordinators = [
-    "Alex Thompson",
-    "Priya Sharma",
-    "David Kim", 
-    "Maya Patel",
-    "James Wilson",
-    "Riya Gupta"
+    "Sai Krithika M - +91 9445269399",
+    "Aravind Krishna R - +91 86103 48957",
+    "Arvind M - +91 6379 501 681"
   ];
 
   return (
@@ -55,12 +52,13 @@ const Footer = () => {
             <div className="space-y-4 text-sm font-inter">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                
                 <div>
                   <p className="text-foreground font-semibold">Location</p>
                   <p className="text-muted-foreground">
-                    Main Auditorium<br />
-                    Technical Campus<br />
-                    University District
+                    Sri Sairam Institute of Technology<br />
+                    Sai Leo Nagar<br />
+                    West Tambaram, Chennai - 600044<br />
                   </p>
                 </div>
               </div>
@@ -70,8 +68,8 @@ const Footer = () => {
                 <div>
                   <p className="text-foreground font-semibold">Contact</p>
                   <p className="text-muted-foreground">
-                    nutpam2k25@university.edu<br />
-                    +1 (555) 123-4567
+                    nutpam@sairamit.edu.in<br />
+                    {/* +1 (555) 123-4567 */}
                   </p>
                 </div>
               </div>
@@ -86,10 +84,10 @@ const Footer = () => {
             
             <div className="flex gap-4 mb-6">
               {[
-                { icon: Twitter, href: "#", label: "Twitter" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Mail, href: "#", label: "Email" },
+                { icon: Twitter, href: "https://x.com/nutpam2k24?s=11", label: "Twitter" },
+                { icon: Instagram, href: "https://www.instagram.com/nutpam_2025?igsh=cWg3cW1raGF1b2Jz", label: "Instagram" },
+                { icon: Facebook, href: "https://www.facebook.com/share/17Lyj2HWdk/?mibextid=wwXIfr", label: "Facebook" },
+                { icon: Mail, href: "mailto:nutpam@sairamit.edu.in", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}

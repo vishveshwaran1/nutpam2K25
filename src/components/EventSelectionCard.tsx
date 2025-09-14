@@ -28,7 +28,7 @@ const EventSelectionCard = ({
   const colorClass = `text-game-${symbolColor}`;
 
   return (
-    <div className="w-full  max-w-md mx-auto xl:max-w-none border-2 border-border rounded-xl p-2 sm:p-3 xl:p-4 space-y-2 xl:space-y-3 bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 h-[280px] sm:h-[300px] xl:max-h-[calc(50vh-2rem)] xl:overflow-hidden flex flex-col">
+    <div className="w-full max-w-md mx-auto xl:max-w-none border-2 border-border rounded-xl p-2 sm:p-3 xl:p-4 space-y-2 xl:space-y-3 bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 h-[280px] sm:h-[300px] xl:max-h-[calc(50vh-2rem)] xl:overflow-hidden flex flex-col">
       {/* Header */}
       <div className="text-center space-y-1 flex-shrink-0">
         <div
@@ -36,10 +36,10 @@ const EventSelectionCard = ({
         >
           {symbol}
         </div>
-        <h3 className="  font-cyber text-xs xl:text-xs font-semibold leading-tight text-foreground px-2">
+        <h3 className="font-cyber text-xs xl:text-xs font-semibold leading-tight text-foreground px-2">
           {title}
         </h3>
-        <div className=" h-3 "></div>
+        <div className="h-3"></div>
         {events.map((event, index) => (
           <button
             key={index}
@@ -62,9 +62,6 @@ const EventSelectionCard = ({
           </button>
         ))}
       </div>
-
-      {/* Events List */}
-      <div className=" h-full w-full space-y-1 xl:space-y-2 flex-1 overflow-hidden min-h-0"></div>
     </div>
   );
 };

@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'cyber': ['Orbitron', 'monospace'],
-        'inter': ['Inter', 'sans-serif'],
+        cyber: ["Orbitron", "monospace"],
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,29 +67,29 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         // Cyberpunk theme extensions
-        'cyber': {
-          'glow': "hsl(var(--cyber-glow))",
-          'glow-soft': "hsl(var(--cyber-glow-soft))",
+        cyber: {
+          glow: "hsl(var(--cyber-glow))",
+          "glow-soft": "hsl(var(--cyber-glow-soft))",
         },
-        'game': {
-          'spade': "hsl(var(--game-spade))",
-          'diamond': "hsl(var(--game-diamond))",
-          'club': "hsl(var(--game-club))",
-          'heart': "hsl(var(--game-heart))",
+        game: {
+          spade: "hsl(var(--game-spade))",
+          diamond: "hsl(var(--game-diamond))",
+          club: "hsl(var(--game-club))",
+          heart: "hsl(var(--game-heart))",
         },
       },
       backgroundImage: {
-        'gradient-cyber': 'var(--gradient-cyber)',
-        'gradient-red': 'var(--gradient-red)',
+        "gradient-cyber": "var(--gradient-cyber)",
+        "gradient-red": "var(--gradient-red)",
       },
       boxShadow: {
-        'glow': 'var(--gradient-glow)',
-        'cyber': '0 0 20px hsl(var(--cyber-glow) / 0.3)',
-        'cyber-strong': '0 0 40px hsl(var(--cyber-glow) / 0.5)',
+        glow: "var(--gradient-glow)",
+        cyber: "0 0 20px hsl(var(--cyber-glow) / 0.3)",
+        "cyber-strong": "0 0 40px hsl(var(--cyber-glow) / 0.5)",
       },
       animation: {
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'pulse-red': 'pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        glow: "glow 2s ease-in-out infinite alternate",
+        "pulse-red": "pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -100,9 +105,12 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "glow": {
+        glow: {
           "0%": { boxShadow: "0 0 5px hsl(var(--cyber-glow) / 0.2)" },
-          "100%": { boxShadow: "0 0 20px hsl(var(--cyber-glow) / 0.6), 0 0 30px hsl(var(--cyber-glow) / 0.4)" },
+          "100%": {
+            boxShadow:
+              "0 0 20px hsl(var(--cyber-glow) / 0.6), 0 0 30px hsl(var(--cyber-glow) / 0.4)",
+          },
         },
         "pulse-red": {
           "0%, 100%": { opacity: "1" },

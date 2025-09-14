@@ -6,23 +6,32 @@ interface GameCardProps {
   symbolColor: "spade" | "diamond" | "club" | "heart";
 }
 
-const GameCard = ({ symbol, title, isActive, onClick, symbolColor }: GameCardProps) => {
+const GameCard = ({
+  symbol,
+  title,
+  isActive,
+  onClick,
+  symbolColor,
+}: GameCardProps) => {
   const colorClass = `text-game-${symbolColor}`;
-  
+
   return (
-    <div 
+    <div
       onClick={onClick}
       className={`
-        relative group cursor-pointer p-6 border-2 rounded-lg transition-all duration-300
-        ${isActive 
-          ? "border-primary bg-primary/10 shadow-cyber-strong" 
-          : "border-border hover:border-primary/50 hover:bg-primary/5"
+        relative h-[110px] group cursor-pointer  border-2 rounded-lg transition-all duration-300 max-sm:p-2 sm:p-4 md:p-4 lg:p-6
+        ${
+          isActive
+            ? "border-primary bg-primary/10 shadow-cyber-strong"
+            : "border-border hover:border-primary/50 hover:bg-primary/5"
         }
       `}
     >
       {/* Card Content */}
       <div className="text-center">
-        <div className={`text-4xl mb-4 ${colorClass} group-hover:scale-110 transition-transform duration-300`}>
+        <div
+          className={`text-4xl mb-2 ${colorClass} group-hover:scale-110 transition-transform duration-300`}
+        >
           {symbol}
         </div>
 
@@ -32,14 +41,17 @@ const GameCard = ({ symbol, title, isActive, onClick, symbolColor }: GameCardPro
       </div>
 
       {/* Hover Glow Effect */}
-      <div className={`
+      <div
+        className={`
         absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300
         ${isActive ? "opacity-20" : ""}
-        ${symbolColor === 'diamond' || symbolColor === 'heart' 
-          ? "bg-gradient-to-br from-primary/20 to-primary/5" 
-          : "bg-gradient-to-br from-foreground/10 to-foreground/5"
+        ${
+          symbolColor === "diamond" || symbolColor === "heart"
+            ? "bg-gradient-to-br from-primary/20 to-primary/5"
+            : "bg-gradient-to-br from-foreground/10 to-foreground/5"
         }
-      `}></div>
+      `}
+      ></div>
     </div>
   );
 };

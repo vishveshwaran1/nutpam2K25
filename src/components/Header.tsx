@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,10 +15,28 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (item: { label: string; id: string }) => {
+    if (item.label === "Events") {
+      navigate("/events");
+    } else if (item.label === "Home") {
+      navigate("/");
+    } else {
+      // For other sections, scroll to them if we're on the home page
+      if (location.pathname === "/") {
+        const element = document.getElementById(item.id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to home page first, then scroll
+        navigate("/");
+        setTimeout(() => {
+          const element = document.getElementById(item.id);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
     }
   };
 
@@ -47,7 +68,7 @@ const Header = () => {
             ].map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleNavigation(item)}
                 className="text-foreground hover:text-primary transition-colors duration-300 font-inter font-medium"
               >
                 {item.label}

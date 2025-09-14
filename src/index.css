@@ -176,7 +176,9 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
-
+ .scroll::-webkit-scrollbar {
+    display: none;
+  }
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
