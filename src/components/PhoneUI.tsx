@@ -33,7 +33,7 @@ const PhoneUI = ({ selectedEvent, timer }: PhoneUIProps) => {
         <div className="flex-1 bg-background border border-border rounded-2xl p-2 sm:p-3 xl:p-4 overflow-hidden min-h-0 scroll" >
           {selectedEvent ? (
             /* Selected Event Details */
-            <div className="space-y-2 sm:space-y-3 xl:space-y-4 h-full overflow-y-auto scroll">
+            <div className="space-y-2 sm:space-y-3 xl:space-y-4 h-full overflow-y-auto scrollbar-hide scroll">
               <div className="text-center border-b border-border pb-2">
                 <h3 className="font-cyber text-xs text-primary tracking-wider mb-1">
                   EVENT DETAILS
