@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Background Effects with GradientBlinds */}
       <div className="absolute inset-0 z-0">
         <GradientBlinds
-          gradientColors={["#F50F32", "#ffffff"]}
+          gradientColors={["#F50F32", "#1d1d1dff"]}
           angle={130}
           noise={0.15}
           blindCount={36}
