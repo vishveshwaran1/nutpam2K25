@@ -19,7 +19,7 @@ const Header = () => {
   const handleNavigation = (item: { label: string; id: string }) => {
     if (item.label === "Events") {
       navigate("/events");
-    }  else {
+    } else {
       // For other sections, scroll to them if we're on the home page
       if (location.pathname === "/") {
         const element = document.getElementById(item.id);
@@ -51,7 +51,15 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
 
-          <div className="font-cyber text-xl font-bold cyber-glow flex items-center gap-2">
+          <div
+            className="font-cyber text-xl font-bold cyber-glow flex items-center gap-2"
+            onClick={() => {
+              const element = document.getElementById("hero");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             <img src="/logo.png" alt="logo" className="h-8 w-8" />
             NuTPAM 2k25
           </div>
