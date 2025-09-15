@@ -48,7 +48,7 @@ const gameData: { [key: string]: GameData } = {
         teamSize: "1–2 members",
         rules: ["Bring laptop", "Original work only", "Plagiarism prohibited", "Formal dress code"],
         coordinators: ["Swetha S – 80725 58445", "Radhika V – 73378 25333"],
-        registerLink: "https://forms.gle/ZwvBTEdEGT6tWDtN6"
+        registerLink: "https://forms.gle/c96WZdqA5qZTZfNW9"
       }
     ],
     suit: "spade",
