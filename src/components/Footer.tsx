@@ -84,7 +84,7 @@ const Footer = () => {
             
             <div className="flex gap-4 mb-6">
               {[
-                { icon: Twitter, href: "https://x.com/nutpam2k24?s=11", label: "Twitter" },
+                { icon: Twitter, href: "https://x.com/nutpam2k25?s=11" },
                 { icon: Instagram, href: "https://www.instagram.com/nutpam_2025?igsh=cWg3cW1raGF1b2Jz", label: "Instagram" },
                 { icon: Facebook, href: "https://www.facebook.com/share/17Lyj2HWdk/?mibextid=wwXIfr", label: "Facebook" },
                 { icon: Mail, href: "mailto:nutpam@sairamit.edu.in", label: "Email" },
