@@ -21,11 +21,15 @@ const LoadingPage: React.FC = () => {
       </h1>
       <div className="absolute bottom-0 left-0 w-full flex flex-col items-center justify-center pb-8">
         <div className="w-full max-w-xl relative h-16 flex items-center justify-center">
-          <img
-            src="JOKER.png"
-            alt="Joker Running"
+          <video
+            src="joker.mp4"
+            autoPlay
+            loop
+            muted
             className="w-20 h-20 absolute"
             style={{
+              width: "80px",
+              height: "80px",
               left: `calc(${progress}% - 32px)`,
               top: "-70px",
               transition: "left 0.04s linear",
