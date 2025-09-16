@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
     id: "d1",
     name: "Aishwarya Singh",
     role: "Lead Designer",
-    image: "/placeholder.svg", // Replace with actual image path
+    image: "https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvczc1LWppci0wMzE2LXBvbV8yLnBuZw.png", // Replace with actual image path
     category: "design",
     socialLinks: {
       linkedin: "https://linkedin.com/in/aishwarya-singh",
@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
     id: "d2",
     name: "Priya Sharma",
     role: "UI/UX Designer",
-    image: "/placeholder.svg", // Replace with actual image path
+    image: "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV8yN19yZWFsaXN0aWNfcGhvdG9fb2Zfc21pbGluZ19oYW5kc29tZV95b3VuZ19pbl8xNWExMTE1ZC0xZTBiLTQ4YjAtOGEyNi01ZDE1ZmE3Njg2MzYucG5n.png", // Replace with actual image path
     category: "design",
     socialLinks: {
       linkedin: "https://linkedin.com/in/priya-sharma"
