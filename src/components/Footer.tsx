@@ -2,8 +2,8 @@ import { Github, Linkedin, Twitter, Mail, MapPin,Facebook,Instagram } from "luci
 
 const Footer = () => {
   const staffCoordinators = [
-    "Ms Roopa D",
-    "Mr J Pathmanaban",
+    "Dr Roopa D",
+    "Mr Pathmanaban J",
     
   ];
 
