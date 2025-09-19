@@ -29,7 +29,7 @@ const gameData: { [key: string]: GameData } = {
         overview: "Present innovative ideas & research. On-spot problem statements.",
         format: "30 mins/team | Judging: innovation, clarity, Q&A.",
         teamSize: "2–3 members",
-        rules: ["Submit slides/paper in advance", "Strict timing", "No plagiarism"],
+        rules: ["Submit slides/paper in advance", "Strict timing", "No plagiarism","Formal dress code"],
         coordinators: ["Thiyanesh R – 86085 83298", "Raja Sri S K – 93633 76779"],
         registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScywxZmsImPLbaDiqz2yCMy_XrwI8oaZGm4yOAHZAhpMHAdHg/viewform"
       },
@@ -38,7 +38,7 @@ const gameData: { [key: string]: GameData } = {
         overview: "Every line of code is a step closer to survival.",
         format: "Round 1: Mind Game – Solve coding Qs, 3 lives. Round 2: Visa Challenge – DSA, Debugging, Math, Implementation + Power-ups.",
         teamSize: "2 members",
-        rules: ["UG students only", "No internet/help", "Plagiarism = disqualification"],
+        rules: ["UG students only", "No internet/help", "Plagiarism = disqualification","Formal dress code"],
         coordinators: ["Aswin R – 99409 31205", "Sachein D – 98407 44257", "Divya Sri Dharshini – 81481 49948"],
         registerLink: "https://forms.gle/zPMruSAg3WHt6BYk8"
       },
