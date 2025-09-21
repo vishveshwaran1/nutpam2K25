@@ -58,14 +58,17 @@ const Footer = () => {
               Event Information
             </h3>
             <div className="flex items-start gap-3">
-              <Mail className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+              <Mail className="w-4 h-4 text-primary mt-1 flex-shrink-0"  />
               <div>
                 <p className="text-foreground font-semibold">Contact</p>
-                <p className="text-muted-foreground">
+                <a
+                  className="text-muted-foreground"
+                  href="mailto:nutpam@sairamit.edu.in"
+                >
                   nutpam@sairamit.edu.in
                   <br />
                   {/* +1 (555) 123-4567 */}
-                </p>
+                </a>
               </div>
             </div>
             <div className="space-y-4 text-sm font-inter">
@@ -74,14 +77,19 @@ const Footer = () => {
 
                 <div>
                   <p className="text-foreground font-semibold">Location</p>
-                  <p className="text-muted-foreground">
+                  <a
+                    className="text-muted-foreground"
+                    href="https://maps.app.goo.gl/xeKnFUemydcaDeNk7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Sri Sairam Institute of Technology
                     <br />
                     Sai Leo Nagar
                     <br />
                     West Tambaram, Chennai - 600044
                     <br />
-                  </p>
+                  </a>
                 </div>
               </div>
               <div className="col-span-3 max-sm:w-1/2 sm:w-1/2 md:w-full m-0 border-red-600 backdrop-blur-md border-2 border-border rounded-[1rem] p-2 sm:p-4 xl:p-2 flex flex-col shadow-cyber-strong  hover:shadow-cyber-pulse transition-all duration-300">

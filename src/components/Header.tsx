@@ -18,8 +18,12 @@ const Header = () => {
 
   const handleNavigation = (item: { label: string; id: string }) => {
     if (item.label === "Events") {
-      navigate("/events");
+      navigate("/events");  
     } else {
+      if (item.label === "Team") {
+        navigate("/team");
+        return;
+      }
       // For other sections, scroll to them if we're on the home page
       if (location.pathname === "/") {
         const element = document.getElementById(item.id);
@@ -70,6 +74,7 @@ const Header = () => {
               { label: "Home", id: "hero" },
               { label: "About", id: "about" },
               { label: "Events", id: "events" },
+              { label: "Team", id: "team" },
               { label: "Sponsors", id: "sponsors" },
               { label: "Contact", id: "contact" },
             ].map((item) => (
@@ -93,6 +98,7 @@ const Header = () => {
               { label: "Home", id: "hero" },
               { label: "About", id: "about" },
               { label: "Events", id: "events" },
+              { label: "Team", id: "team" },
               { label: "Sponsors", id: "sponsors" },
               { label: "Contact", id: "contact" },
             ].map((item) => (
