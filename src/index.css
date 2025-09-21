@@ -9,8 +9,33 @@ All colors MUST be HSL.
 
 @font-face {
   font-family: "Nuptamttf";
-  src: url(../public/Takoyaki.ttf) format("truetype");
+  src: url(/Takoyaki.ttf) format("truetype");
   font-weight: normal;
+}
+
+@keyframes banner-open {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px;
+  }
+}
+@keyframes banner-close {
+  from {
+    height: 100px;
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+.animate-banner-open {
+  animation: banner-open 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.animate-banner-close {
+  animation: banner-close 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 @font-face {
   font-family: "Nuptam";
@@ -90,7 +115,6 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
- 
 
   .dark {
     /* Same as light theme - we're using pure cyberpunk dark theme */
@@ -174,7 +198,7 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
- .scroll::-webkit-scrollbar {
+  .scroll::-webkit-scrollbar {
     display: none;
   }
   /* Custom scrollbar */

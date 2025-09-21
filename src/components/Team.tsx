@@ -1,5 +1,7 @@
 import React from "react";
 import TeamMember from "./TeamMember";
+import TeamBanner from "./TeamBanner";
+import Banner from "./Banner";
 
 interface TeamMemberData {
   id: string;
@@ -33,6 +35,8 @@ const Team: React.FC<TeamProps> = ({
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {description}
+          <TeamBanner />
+          <Banner img="/OIP.jpg" name="Banner Title" />
           </p>
         </div>
 

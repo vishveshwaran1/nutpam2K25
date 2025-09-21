@@ -4,6 +4,7 @@ import TeamMember from "@/components/TeamMember";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import TeamBanner from "@/components/TeamBanner";
 
 const Team = () => {
   const designTeam = teamMembers.filter(
@@ -47,7 +48,10 @@ const Team = () => {
                 <h2 className="text-2xl font-nuptam font-bold mb-6 text-primary border-b border-border pb-2">
                   Design Team
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-screen overflow-y-auto w-[100%] ">
+                  <TeamBanner />
+                  <TeamBanner />
                   {designTeam.map((member) => (
                     <TeamMember
                       key={member.id}

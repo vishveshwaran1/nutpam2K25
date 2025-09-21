@@ -12,6 +12,7 @@ import Banner  from "./components/Banner";
 const queryClient = new QueryClient();
 
 import React, { useState, useEffect } from "react";
+import TeamBanner from "./components/TeamBanner";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +35,7 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/team" element={<Team />} />
-              <Route path="/banner" element={<Banner img="" name="Banner Title" />} />
+              <Route path="/banner" element={<TeamBanner />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

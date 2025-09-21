@@ -6,6 +6,7 @@ interface BannerProps {
   animationDelay?: number; // Optional delay in seconds
   width?: string | number; // Optional width (default: 100%)
   height?: string | number; // Optional height (default: 600px)
+  isOpen?: boolean; // Controls open/close animation
 }
 
 function Banner({
@@ -13,12 +14,13 @@ function Banner({
   name,
   animationDelay = 0,
   width = "100%",
-  height = "600px",
+  height = "200px",
+  isOpen = true,
 }: BannerProps) {
   const bannerRef = useRef<HTMLDivElement>(null);
   const rollEdgeRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLImageElement>(null);
-
+  const [open, setOpen] = React.useState(isOpen);
   useEffect(() => {
     const banner = bannerRef.current;
     const photo = photoRef.current;
@@ -60,14 +62,14 @@ function Banner({
       const randomX = (Math.random() - 0.5) * 2;
       const randomTime = 2 + Math.random() * 2;
 
-      banner.style.transition = `transform ${randomTime}s ease-in-out`;
-      banner.style.transform = `rotateX(${randomX}deg)`;
+      banner.style.transition = `transform ${1}s ease-in-out`;
+      banner.style.transform = `rotateX(10deg)`;
 
-      setTimeout(addSubtleMovement, randomTime * 1000);
+      // setTimeout(addSubtleMovement,  1000);
     };
 
     // Start the subtle movement after a delay
-    const timeout = setTimeout(addSubtleMovement, 1000);
+    const timeout = setTimeout(addSubtleMovement, 2000);
 
     // Cleanup
     return () => {
@@ -75,26 +77,38 @@ function Banner({
       clearTimeout(timeout);
     };
   }, [name]);
-
+  const [toggleOpen, setToggleOpen] = React.useState(isOpen);
   return (
-    <div className="flex justify-center items-center w-full">
+    <div className="flex flex-col items-center justify-center">
+       <img
+        src="/airship-silver.png"
+        alt="Air"
+        className=" w-[400px] h-[200px] z-10"
+        onClick={() => setOpen(!open)}
+      />
       <div
-        className="relative w-full max-w-[400px] perspective-[1000px] mx-auto"
+        className="relative  max-w-[170px] perspective-[1000px] translate-x-[-12%] translate-y-[-120%] z-[0] top-[200px] "
         style={{
           aspectRatio: "2/3", // Maintain a 2:3 aspect ratio
           width: typeof width === "number" ? `${width}px` : width,
-          height: typeof height === "number" ? `${height}px` : height,
+          height: typeof height === "number" ? `200px` : height,
         }}
       >
+        {/* {Rope} */}
+        <div className="absolute top-[-50px] left-[-10px] w-[5px] h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38]  z-[3] shadow-md rotate-[-10deg]"></div>
+        <div className="absolute top-[-50px] right-[-10px] w-[5px] h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38]  z-[3] shadow-md rotate-[10deg]"></div>
+
         {/* Rod */}
         <div className="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-5px] before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-5px] after:right-[-10px] after:z-[4]"></div>
 
         {/* Banner */}
         <div
           ref={bannerRef}
-          className="absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden animate-wave"
+          className={`absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden h-[10px] ${
+            open ? "animate-banner-open" : "animate-banner-close"
+          }`}
           style={{
-            height: "calc(100% - 10px)",
+            height: "200px",
             transformOrigin: "top center",
             animationDelay: `${animationDelay}s`,
           }}
@@ -117,7 +131,7 @@ function Banner({
             </div>
           </div>
         </div>
-
+            
         {/* Roll Edge */}
         <div
           ref={rollEdgeRef}
