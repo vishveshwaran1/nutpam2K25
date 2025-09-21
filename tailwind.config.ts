@@ -90,6 +90,9 @@ export default {
       animation: {
         glow: "glow 2s ease-in-out infinite alternate",
         "pulse-red": "pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        wave: "wave 16s ease-in-out infinite",
+        "roll-up": "roll-up 16s ease-in-out infinite",
+        "shadow-change": "shadow-change 16s ease-in-out infinite",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -119,6 +122,68 @@ export default {
         "cyber-flicker": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" },
+        },
+        wave: {
+          "0%": {
+            height: "calc(100% - 10px)",
+            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+          },
+          "20%": {
+            height: "60px",
+            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+          },
+          "25%": {
+            height: "50px",
+            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
+          },
+          "30%, 100%": {
+            height: "20px",
+            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)",
+          },
+        },
+        "roll-up": {
+          "0%": {
+            height: "20px",
+            bottom: "0",
+            borderRadius: "10px",
+          },
+          "20%": {
+            height: "30px",
+            bottom: "calc(100% - 60px)",
+            borderRadius: "15px",
+          },
+          "25%": {
+            height: "40px",
+            bottom: "calc(100% - 50px)",
+            borderRadius: "20px",
+          },
+          "30%, 100%": {
+            height: "30px",
+            bottom: "calc(100% - 30px)",
+            borderRadius: "15px",
+          },
+        },
+        "shadow-change": {
+          "0%": {
+            opacity: "0.2",
+            width: "80%",
+            filter: "blur(5px)",
+          },
+          "20%": {
+            opacity: "0.3",
+            width: "40%",
+            filter: "blur(7px)",
+          },
+          "25%": {
+            opacity: "0.4",
+            width: "30%",
+            filter: "blur(8px)",
+          },
+          "30%, 100%": {
+            opacity: "0.1",
+            width: "20%",
+            filter: "blur(10px)",
+          },
         },
       },
     },

@@ -23,7 +23,10 @@ const TeamMember: React.FC<TeamMemberProps> = ({
       <Avatar className="w-32 h-32 mb-4 border-2 border-primary">
         <AvatarImage src={image} alt={name} />
         <AvatarFallback className="bg-secondary text-2xl font-nuptam">
-          {name.split(" ").map((n) => n[0]).join("")}
+          {name
+            .split(" ")
+            .map((n) => n[0])
+            .join("")}
         </AvatarFallback>
       </Avatar>
       <h3 className="text-lg font-bold font-nuptam text-foreground">{name}</h3>

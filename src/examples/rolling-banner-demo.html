@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rolling Banner Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              wave: "wave 16s ease-in-out infinite",
+              "roll-up": "roll-up 16s ease-in-out infinite",
+              "shadow-change": "shadow-change 16s ease-in-out infinite",
+            },
+            keyframes: {
+              wave: {
+                "0%": {
+                  height: "calc(100% - 10px)",
+                  boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+                },
+                "20%": {
+                  height: "60px",
+                  boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)",
+                },
+                "25%": {
+                  height: "50px",
+                  boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
+                },
+                "30%, 100%": {
+                  height: "20px",
+                  boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)",
+                },
+              },
+              "roll-up": {
+                "0%": {
+                  height: "20px",
+                  bottom: "0",
+                  borderRadius: "10px",
+                },
+                "20%": {
+                  height: "30px",
+                  bottom: "calc(100% - 60px)",
+                  borderRadius: "15px",
+                },
+                "25%": {
+                  height: "40px",
+                  bottom: "calc(100% - 50px)",
+                  borderRadius: "20px",
+                },
+                "30%, 100%": {
+                  height: "30px",
+                  bottom: "calc(100% - 30px)",
+                  borderRadius: "15px",
+                },
+              },
+              "shadow-change": {
+                "0%": {
+                  opacity: "0.2",
+                  width: "80%",
+                  filter: "blur(5px)",
+                },
+                "20%": {
+                  opacity: "0.3",
+                  width: "40%",
+                  filter: "blur(7px)",
+                },
+                "25%": {
+                  opacity: "0.4",
+                  width: "30%",
+                  filter: "blur(8px)",
+                },
+                "30%, 100%": {
+                  opacity: "0.1",
+                  width: "20%",
+                  filter: "blur(10px)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-8">
+    <div class="w-full max-w-6xl">
+      <h1 class="text-3xl font-bold mb-8 text-center">
+        Rolling Banner Animation Demo
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Banner 1 -->
+        <div class="flex justify-center items-center">
+          <div class="relative w-[300px] h-[450px] perspective-[1000px]">
+            <!-- Rod -->
+            <div
+              class="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-5px] before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-5px] after:right-[-10px] after:z-[4]"
+            ></div>
+
+            <!-- Banner -->
+            <div
+              id="banner1"
+              class="absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden animate-wave"
+              style="height: calc(100% - 10px); transform-origin: top center"
+            >
+              <!-- Photo container -->
+              <div
+                class="absolute w-full h-full flex justify-center items-center overflow-hidden pointer-events-none"
+              >
+                <img
+                  id="photo1"
+                  src="https://placehold.co/400x400/e4e0d8/333333?text=Team+Member"
+                  alt="Team Member 1"
+                  class="w-[150px] h-[150px] max-w-[80%] object-cover rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg border-[5px] border-white z-[2]"
+                />
+                <div
+                  class="absolute bottom-5 w-full text-center z-[3] bg-black/30 py-1 px-2"
+                >
+                  <span
+                    id="name-Team-Member-1"
+                    class="text-white font-semibold text-sm transition-opacity duration-300"
+                    >Team Member 1</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Roll Edge -->
+            <div
+              class="absolute w-full h-[20px] bottom-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.2)] via-[rgba(0,0,0,0.1)] to-transparent rounded-bl-[10px] rounded-br-[10px] z-[9] animate-roll-up"
+              style="transform-origin: bottom center"
+            ></div>
+
+            <!-- Shadow -->
+            <div
+              class="absolute bottom-[-10px] left-[10%] w-[80%] h-[10px] bg-[rgba(0,0,0,0.2)] rounded-full blur-[5px] animate-shadow-change"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="flex justify-center items-center">
+          <div class="relative w-[300px] h-[450px] perspective-[1000px]">
+            <!-- Rod -->
+            <div
+              class="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-5px] before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-5px] after:right-[-10px] after:z-[4]"
+            ></div>
+
+            <!-- Banner -->
+            <div
+              id="banner2"
+              class="absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden animate-wave"
+              style="
+                height: calc(100% - 10px);
+                transform-origin: top center;
+                animation-delay: 2s;
+              "
+            >
+              <!-- Photo container -->
+              <div
+                class="absolute w-full h-full flex justify-center items-center overflow-hidden pointer-events-none"
+              >
+                <img
+                  id="photo2"
+                  src="https://placehold.co/400x400/e4e0d8/333333?text=Team+Member"
+                  alt="Team Member 2"
+                  class="w-[150px] h-[150px] max-w-[80%] object-cover rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg border-[5px] border-white z-[2]"
+                />
+                <div
+                  class="absolute bottom-5 w-full text-center z-[3] bg-black/30 py-1 px-2"
+                >
+                  <span
+                    id="name-Team-Member-2"
+                    class="text-white font-semibold text-sm transition-opacity duration-300"
+                    >Team Member 2</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Roll Edge -->
+            <div
+              class="absolute w-full h-[20px] bottom-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.2)] via-[rgba(0,0,0,0.1)] to-transparent rounded-bl-[10px] rounded-br-[10px] z-[9] animate-roll-up"
+              style="transform-origin: bottom center; animation-delay: 2s"
+            ></div>
+
+            <!-- Shadow -->
+            <div
+              class="absolute bottom-[-10px] left-[10%] w-[80%] h-[10px] bg-[rgba(0,0,0,0.2)] rounded-full blur-[5px] animate-shadow-change"
+              style="animation-delay: 2s"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Banner 3 -->
+        <div class="flex justify-center items-center">
+          <div class="relative w-[300px] h-[450px] perspective-[1000px]">
+            <!-- Rod -->
+            <div
+              class="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-5px] before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-5px] after:right-[-10px] after:z-[4]"
+            ></div>
+
+            <!-- Banner -->
+            <div
+              id="banner3"
+              class="absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden animate-wave"
+              style="
+                height: calc(100% - 10px);
+                transform-origin: top center;
+                animation-delay: 4s;
+              "
+            >
+              <!-- Photo container -->
+              <div
+                class="absolute w-full h-full flex justify-center items-center overflow-hidden pointer-events-none"
+              >
+                <img
+                  id="photo3"
+                  src="https://placehold.co/400x400/e4e0d8/333333?text=Team+Member"
+                  alt="Team Member 3"
+                  class="w-[150px] h-[150px] max-w-[80%] object-cover rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg border-[5px] border-white z-[2]"
+                />
+                <div
+                  class="absolute bottom-5 w-full text-center z-[3] bg-black/30 py-1 px-2"
+                >
+                  <span
+                    id="name-Team-Member-3"
+                    class="text-white font-semibold text-sm transition-opacity duration-300"
+                    >Team Member 3</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Roll Edge -->
+            <div
+              class="absolute w-full h-[20px] bottom-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.2)] via-[rgba(0,0,0,0.1)] to-transparent rounded-bl-[10px] rounded-br-[10px] z-[9] animate-roll-up"
+              style="transform-origin: bottom center; animation-delay: 4s"
+            ></div>
+
+            <!-- Shadow -->
+            <div
+              class="absolute bottom-[-10px] left-[10%] w-[80%] h-[10px] bg-[rgba(0,0,0,0.2)] rounded-full blur-[5px] animate-shadow-change"
+              style="animation-delay: 4s"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to update photo position as banner rolls
+        function updatePhotoPosition(bannerEl, photoEl, nameEl) {
+          // Get the current height of the banner
+          const bannerHeight = bannerEl.offsetHeight;
+          const bannerWidth = bannerEl.offsetWidth;
+          const maxSize = Math.min(150, bannerHeight * 0.8, bannerWidth * 0.8);
+
+          // Set image size based on banner height - scale it down as banner rolls up
+          if (bannerHeight > 60) {
+            // Adjust size proportionally
+            photoEl.style.width = maxSize + "px";
+            photoEl.style.height = maxSize + "px";
+            photoEl.style.opacity = 1;
+            nameEl.style.opacity = 1;
+          } else if (bannerHeight > 30) {
+            // Shrink more rapidly as banner gets very small
+            const scale = (bannerHeight - 30) / 30;
+            const scaledSize = maxSize * scale;
+            photoEl.style.width = scaledSize + "px";
+            photoEl.style.height = scaledSize + "px";
+            photoEl.style.opacity = scale;
+            nameEl.style.opacity = scale;
+          } else {
+            // Hide the image when banner is almost fully rolled
+            photoEl.style.opacity = 0;
+            nameEl.style.opacity = 0;
+          }
+
+          // Request next frame
+          requestAnimationFrame(() =>
+            updatePhotoPosition(bannerEl, photoEl, nameEl)
+          );
+        }
+
+        // Add subtle random movement to make it more realistic
+        function addSubtleMovement(bannerEl) {
+          const randomX = (Math.random() - 0.5) * 2;
+          const randomTime = 2 + Math.random() * 2;
+
+          bannerEl.style.transition = `transform ${randomTime}s ease-in-out`;
+          bannerEl.style.transform = `rotateX(${randomX}deg)`;
+
+          setTimeout(() => addSubtleMovement(bannerEl), randomTime * 1000);
+        }
+
+        // Initialize all banners
+        for (let i = 1; i <= 3; i++) {
+          const banner = document.getElementById(`banner${i}`);
+          const photo = document.getElementById(`photo${i}`);
+          const name = document.getElementById(`name-Team-Member-${i}`);
+
+          if (banner && photo && name) {
+            updatePhotoPosition(banner, photo, name);
+            setTimeout(() => addSubtleMovement(banner), 1000 + i * 500);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -23,8 +23,8 @@ export const teamMembers: TeamMember[] = [
     category: "design",
     socialLinks: {
       linkedin: "https://linkedin.com/in/aishwarya-singh",
-      twitter: "https://twitter.com/aishwarya_design"
-    }
+      twitter: "https://twitter.com/aishwarya_design",
+    },
   },
   {
     id: "d2",
@@ -33,8 +33,8 @@ export const teamMembers: TeamMember[] = [
     image: "/placeholder.svg", // Replace with actual image path
     category: "design",
     socialLinks: {
-      linkedin: "https://linkedin.com/in/priya-sharma"
-    }
+      linkedin: "https://linkedin.com/in/priya-sharma",
+    },
   },
   {
     id: "d3",
@@ -43,8 +43,8 @@ export const teamMembers: TeamMember[] = [
     image: "/placeholder.svg", // Replace with actual image path
     category: "design",
     socialLinks: {
-      twitter: "https://twitter.com/rahul_designs"
-    }
+      twitter: "https://twitter.com/rahul_designs",
+    },
   },
 
   // Development Team
@@ -56,8 +56,8 @@ export const teamMembers: TeamMember[] = [
     category: "development",
     socialLinks: {
       github: "https://github.com/vikrampatel",
-      linkedin: "https://linkedin.com/in/vikram-patel"
-    }
+      linkedin: "https://linkedin.com/in/vikram-patel",
+    },
   },
   {
     id: "dev2",
@@ -67,8 +67,8 @@ export const teamMembers: TeamMember[] = [
     category: "development",
     socialLinks: {
       github: "https://github.com/nehagupta",
-      linkedin: "https://linkedin.com/in/neha-gupta"
-    }
+      linkedin: "https://linkedin.com/in/neha-gupta",
+    },
   },
   {
     id: "dev3",
@@ -77,8 +77,8 @@ export const teamMembers: TeamMember[] = [
     image: "/placeholder.svg", // Replace with actual image path
     category: "development",
     socialLinks: {
-      github: "https://github.com/arjunkumar"
-    }
+      github: "https://github.com/arjunkumar",
+    },
   },
   {
     id: "dev4",
@@ -88,8 +88,8 @@ export const teamMembers: TeamMember[] = [
     category: "development",
     socialLinks: {
       github: "https://github.com/divyareddy",
-      linkedin: "https://linkedin.com/in/divya-reddy"
-    }
+      linkedin: "https://linkedin.com/in/divya-reddy",
+    },
   },
 
   // Coordination Team
@@ -100,15 +100,15 @@ export const teamMembers: TeamMember[] = [
     image: "/placeholder.svg", // Replace with actual image path
     category: "coordination",
     socialLinks: {
-      linkedin: "https://linkedin.com/in/ananya-desai"
-    }
+      linkedin: "https://linkedin.com/in/ananya-desai",
+    },
   },
   {
     id: "c2",
     name: "Rajesh Khanna",
     role: "Logistics Coordinator",
     image: "/placeholder.svg", // Replace with actual image path
-    category: "coordination"
+    category: "coordination",
   },
   {
     id: "c3",
@@ -118,12 +118,14 @@ export const teamMembers: TeamMember[] = [
     category: "coordination",
     socialLinks: {
       linkedin: "https://linkedin.com/in/sneha-joshi",
-      twitter: "https://twitter.com/sneha_joshi"
-    }
-  }
+      twitter: "https://twitter.com/sneha_joshi",
+    },
+  },
 ];
 
 // Function to get team members by category
-export const getTeamByCategory = (category: "design" | "development" | "coordination") => {
-  return teamMembers.filter(member => member.category === category);
+export const getTeamByCategory = (
+  category: "design" | "development" | "coordination"
+) => {
+  return teamMembers.filter((member) => member.category === category);
 };
