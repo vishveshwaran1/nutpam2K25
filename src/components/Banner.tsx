@@ -79,19 +79,17 @@ function Banner({
   }, [name]);
   const [toggleOpen, setToggleOpen] = React.useState(isOpen);
   return (
-    <div className="flex flex-col items-center justify-center">
-       <img
-        src="/airship-silver.png"
+    <div className="w-full relative top-0 flex flex-col items-center gap-4">
+      <img
+        src="/airship-silver1.png"
         alt="Air"
-        className=" w-[400px] h-[200px] z-10"
+        className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] h-[50px] aspect-[2/1] z-10 cursor-pointer"
         onClick={() => setOpen(!open)}
       />
       <div
-        className="relative  max-w-[170px] perspective-[1000px] translate-x-[-12%] translate-y-[-120%] z-[0] top-[200px] "
+        className="relative w-full max-w-[100px] sm:max-w-[130px] md:max-w-[170px] -translate-y-[30px] sm:-translate-y-[40px] md:-translate-y-[50px] z-[0]"
         style={{
           aspectRatio: "2/3", // Maintain a 2:3 aspect ratio
-          width: typeof width === "number" ? `${width}px` : width,
-          height: typeof height === "number" ? `200px` : height,
         }}
       >
         {/* {Rope} */}
@@ -101,14 +99,21 @@ function Banner({
         {/* Rod */}
         <div className="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[20px] before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-5px] before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[20px] after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-5px] after:right-[-10px] after:z-[4]"></div>
 
+        {/* {Rope} */}
+        <div className="absolute top-[-30px] sm:top-[-40px] md:top-[-50px] left-[-8px] sm:left-[-10px] w-[3px] sm:w-[4px] md:w-[5px] h-[30px] sm:h-[40px] md:h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] z-[3] shadow-md rotate-[-10deg]"></div>
+        <div className="absolute top-[-30px] sm:top-[-40px] md:top-[-50px] right-[-8px] sm:right-[-10px] w-[3px] sm:w-[4px] md:w-[5px] h-[30px] sm:h-[40px] md:h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] z-[3] shadow-md rotate-[10deg]"></div>
+
+        {/* Rod */}
+        <div className="absolute top-0 left-0 w-full h-[6px] sm:h-[8px] md:h-[10px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38] rounded-[3px] sm:rounded-[4px] md:rounded-[5px] z-[3] shadow-md before:content-[''] before:absolute before:w-[12px] before:h-[12px] sm:before:w-[16px] sm:before:h-[16px] md:before:w-[20px] md:before:h-[20px] before:bg-[#5a4a38] before:rounded-full before:top-[-3px] sm:before:top-[-4px] md:before:top-[-5px] before:left-[-6px] sm:before:left-[-8px] md:before:left-[-10px] before:z-[4] after:content-[''] after:absolute after:w-[12px] after:h-[12px] sm:after:w-[16px] sm:after:h-[16px] md:after:w-[20px] md:after:h-[20px] after:bg-[#5a4a38] after:rounded-full after:top-[-3px] sm:after:top-[-4px] md:after:top-[-5px] after:right-[-6px] sm:after:right-[-8px] md:after:right-[-10px] after:z-[4]"></div>
+
         {/* Banner */}
         <div
           ref={bannerRef}
-          className={`absolute top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden h-[10px] ${
+          className={`absolute top-[6px] sm:top-[8px] md:top-[10px] left-0 w-full bg-[#f5f0e1] origin-top shadow-md overflow-hidden ${
             open ? "animate-banner-open" : "animate-banner-close"
           }`}
           style={{
-            height: "200px",
+            height: "120px",
             transformOrigin: "top center",
             animationDelay: `${animationDelay}s`,
           }}
@@ -121,17 +126,17 @@ function Banner({
               alt={name}
               className="w-full h-full object-cover z-[2]"
             />
-            <div className="absolute bottom-5 w-full text-center z-[3] bg-black/30 py-1 px-2">
+            <div className="absolute bottom-2 sm:bottom-3 md:bottom-5 w-full text-center z-[3] bg-black/30 py-1 px-1 sm:px-2">
               <span
                 id={`name-${name.replace(/\s+/g, "-")}`}
-                className="text-white font-semibold text-sm transition-opacity duration-300"
+                className="text-white font-semibold text-xs sm:text-sm transition-opacity duration-300"
               >
                 {name}
               </span>
             </div>
           </div>
         </div>
-            
+
         {/* Roll Edge */}
         <div
           ref={rollEdgeRef}

@@ -18,7 +18,7 @@ const Team = () => {
   );
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div className=" w-full relative min-h-screen bg-background text-foreground">
       <Header />
       <main className="container mx-auto py-16 px-4">
         <div className="text-center mb-12">
@@ -32,14 +32,7 @@ const Team = () => {
         </div>
 
         <Tabs defaultValue="all" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList className="bg-card border border-border">
-              <TabsTrigger value="all">All Teams</TabsTrigger>
-              <TabsTrigger value="design">Design Team</TabsTrigger>
-              <TabsTrigger value="development">Development Team</TabsTrigger>
-              <TabsTrigger value="coordination">Coordination Team</TabsTrigger>
-            </TabsList>
-          </div>
+          
 
           <TabsContent value="all">
             <div className="space-y-12">
@@ -49,7 +42,7 @@ const Team = () => {
                   Design Team
                 </h2>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-screen overflow-y-auto w-[100%] ">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-screen overflow-y-auto w-[100%] sm:grid-cols-2 max-sm:grid-cols-1">
                   <TeamBanner />
                   <TeamBanner />
                   {designTeam.map((member) => (
@@ -66,10 +59,10 @@ const Team = () => {
 
               {/* Development Team Section */}
               <div>
-                <h2 className="text-2xl font-nuptam font-bold mb-6 text-primary border-b border-border pb-2">
+                <h2 className="h-full text-2xl font-nuptam font-bold mb-6 text-primary border-b border-border pb-2">
                   Development Team
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:grid-cols-2 max-sm:grid-cols-1 h-full overflow-y-auto w-[100%]">
                   {developmentTeam.map((member) => (
                     <TeamMember
                       key={member.id}
@@ -87,7 +80,7 @@ const Team = () => {
                 <h2 className="text-2xl font-nuptam font-bold mb-6 text-primary border-b border-border pb-2">
                   Coordination Team
                 </h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:grid-cols-2 max-sm:grid-cols-1">
                   {coordinationTeam.map((member) => (
                     <TeamMember
                       key={member.id}
