@@ -26,6 +26,17 @@ export const teamMembers: TeamMember[] = [
       twitter: "https://twitter.com/aishwarya_design",
     },
   },
+    {
+    id: "d1",
+    name: "Aishwarya Singh",
+    role: "Lead Designer",
+    image: "https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvczc1LWppci0wMzE2LXBvbV8yLnBuZw.png", // Replace with actual image path
+    category: "design",
+    socialLinks: {
+      linkedin: "https://linkedin.com/in/aishwarya-singh",
+      twitter: "https://twitter.com/aishwarya_design",
+    },
+  },
   {
     id: "d2",
     name: "Priya Sharma",

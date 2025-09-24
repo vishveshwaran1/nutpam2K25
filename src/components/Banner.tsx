@@ -1,3 +1,5 @@
+import { set } from "date-fns";
+import { run } from "node:test";
 import React, { useEffect, useRef } from "react";
 
 interface BannerProps {
@@ -6,7 +8,8 @@ interface BannerProps {
   animationDelay?: number; // Optional delay in seconds
   width?: string | number; // Optional width (default: 100%)
   height?: string | number; // Optional height (default: 600px)
-  isOpen?: boolean; // Controls open/close animation
+  isOpen?: boolean;
+  prop: any; // Controls open/close animation
 }
 
 function Banner({
@@ -14,13 +17,49 @@ function Banner({
   name,
   animationDelay = 0,
   width = "100%",
-  height = "200px",
+  height = "220px",
   isOpen = true,
+  prop
 }: BannerProps) {
   const bannerRef = useRef<HTMLDivElement>(null);
   const rollEdgeRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLImageElement>(null);
   const [open, setOpen] = React.useState(isOpen);
+  const [page, setPage] = React.useState(0);
+  console.log(prop[page].name);
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    
+    
+    const runAnimation = () => {
+      const isMobile = window.innerWidth < 768;
+      console.log("Is mobile view:", isMobile);
+      if (!isMobile) {
+        // Skip animation on mobile
+        setOpen(true);
+        return;
+      }
+
+      // Step 1: Open (2s)
+      setOpen(true);
+      timeout = setTimeout(() => {
+        // Step 2: Wait (3s)
+        timeout = setTimeout(() => {
+          // Step 3: Close (2s)
+          setOpen(false);
+          timeout = setTimeout(() => {
+            // Step 4: Move to next image
+            setPage((prev) => prev < prop.length - 1 ? prev + 1 : 0); // Assuming 5 images for example
+            runAnimation(); // repeat cycle
+          }, 2000); // close duration
+        }, 3000); // wait duration
+      }, 2000); // open duration
+    };
+
+    runAnimation();
+    return () => clearTimeout(timeout);
+  }, [window.innerWidth ]);
   useEffect(() => {
     const banner = bannerRef.current;
     const photo = photoRef.current;
@@ -35,11 +74,11 @@ function Banner({
       const bannerWidth = banner.offsetWidth;
 
       // Set image opacity based on banner height - fade out as banner rolls up
-      if (bannerHeight > 60) {
+      if (bannerHeight > 120) {
         photo.style.opacity = "1";
         if (nameEl) nameEl.style.opacity = "1";
-      } else if (bannerHeight > 30) {
-        const scale = (bannerHeight - 30) / 30;
+      } else if (bannerHeight > 60) {
+        const scale = (bannerHeight - 60) / 30;
         photo.style.opacity = scale.toString();
         if (nameEl) nameEl.style.opacity = scale.toString();
       } else {
@@ -86,12 +125,7 @@ function Banner({
         className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] h-[50px] aspect-[2/1] z-10 cursor-pointer"
         onClick={() => setOpen(!open)}
       />
-      <div
-        className="relative w-full max-w-[100px] sm:max-w-[130px] md:max-w-[170px] -translate-y-[0px] sm:-translate-y-[40px] md:-translate-y-[50px] z-[0]"
-        style={{
-          aspectRatio: "2/3", // Maintain a 2:3 aspect ratio
-        }}
-      >
+      <div className="relative w-full max-sm:max-w-[160px] max-w-[100px] sm:max-w-[160px] md:max-w-[170px] -translate-y-[0px] sm:-translate-y-[40px] md:-translate-y-[50px] z-[0] aspect-[2/3] sm:aspect-[2/3] max-sm:aspect-[4/8] md:aspect-[2/3]">
         {/* {Rope} */}
         <div className="absolute top-[-50px] left-[-10px] w-[5px] h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38]  z-[3] shadow-md rotate-[-10deg]"></div>
         <div className="absolute top-[-50px] right-[-10px] w-[5px] h-[50px] bg-gradient-to-b from-[#8a7055] to-[#5a4a38]  z-[3] shadow-md rotate-[10deg]"></div>
@@ -113,7 +147,7 @@ function Banner({
             open ? "animate-banner-open" : "animate-banner-close"
           }`}
           style={{
-            height: "120px",
+            height: "300px",
             transformOrigin: "top center",
             animationDelay: `${animationDelay}s`,
           }}
@@ -122,7 +156,7 @@ function Banner({
           <div className="absolute w-full h-full flex justify-center items-center overflow-hidden pointer-events-none">
             <img
               ref={photoRef}
-              src="/OIP.jpg"
+              src={prop[page].image}
               alt={name}
               className="w-full h-full object-cover z-[2]"
             />
@@ -131,7 +165,7 @@ function Banner({
                 id={`name-${name.replace(/\s+/g, "-")}`}
                 className="text-white font-semibold text-xs sm:text-sm transition-opacity duration-300"
               >
-                {name}
+                {prop[page].name}
               </span>
             </div>
           </div>

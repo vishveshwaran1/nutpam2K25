@@ -43,8 +43,8 @@ const Team = () => {
                 </h2>
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-screen overflow-y-auto w-[100%] sm:grid-cols-2 max-sm:grid-cols-1">
-                  <TeamBanner />
-                  <TeamBanner />
+                  <TeamBanner prop={designTeam} />
+                  
                   {designTeam.map((member) => (
                     <TeamMember
                       key={member.id}
