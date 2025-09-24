@@ -79,7 +79,7 @@ function Banner({
   }, [name]);
   const [toggleOpen, setToggleOpen] = React.useState(isOpen);
   return (
-    <div className="w-full relative top-0 flex flex-col items-center gap-4">
+    <div className="w-full relative top-0 flex flex-col items-center gap-16 max-sm:gap-8 ">
       <img
         src="/airship-silver1.png"
         alt="Air"
@@ -87,7 +87,7 @@ function Banner({
         onClick={() => setOpen(!open)}
       />
       <div
-        className="relative w-full max-w-[100px] sm:max-w-[130px] md:max-w-[170px] -translate-y-[30px] sm:-translate-y-[40px] md:-translate-y-[50px] z-[0]"
+        className="relative w-full max-w-[100px] sm:max-w-[130px] md:max-w-[170px] -translate-y-[0px] sm:-translate-y-[40px] md:-translate-y-[50px] z-[0]"
         style={{
           aspectRatio: "2/3", // Maintain a 2:3 aspect ratio
         }}
