@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { teamMembers, TeamMember as TeamMemberType } from "@/data/team";
 import TeamMember from "@/components/TeamMember";
 import Header from "@/components/Header";
@@ -16,6 +16,24 @@ const Team = () => {
   const coordinationTeam = teamMembers.filter(
     (member) => member.category === "coordination"
   );
+  const [mobileView, setMobileView] = useState(false);
+
+  useEffect(() => {
+    setMobileView(window.innerWidth <= 768); // Example breakpoint for mobile
+
+    window.addEventListener("resize", () => {
+      console.log("Resizing window:", window.innerWidth);
+      console.log("Is mobile view:", window.innerWidth <= 768);
+      setMobileView(window.innerWidth <= 768);
+    });
+    return () => {
+      window.removeEventListener("resize", () => {
+        console.log("Removing resize event listener");
+
+        setMobileView(window.innerWidth <= 768);
+      });
+    };
+  }, []);
 
   return (
     <div className=" w-full relative min-h-screen bg-background text-foreground">
@@ -32,8 +50,6 @@ const Team = () => {
         </div>
 
         <Tabs defaultValue="all" className="w-full">
-          
-
           <TabsContent value="all">
             <div className="space-y-12">
               {/* Design Team Section */}
@@ -41,19 +57,20 @@ const Team = () => {
                 <h2 className="text-2xl font-nuptam font-bold mb-6 text-primary border-b border-border pb-2">
                   Design Team
                 </h2>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-screen overflow-y-auto w-[100%] sm:grid-cols-2 max-sm:grid-cols-1">
-                  <TeamBanner prop={designTeam} />
-                  
-                  {designTeam.map((member) => (
-                    <TeamMember
-                      key={member.id}
-                      name={member.name}
-                      role={member.role}
-                      image={member.image}
-                      socialLinks={member.socialLinks}
-                    />
-                  ))}
+                  {/* mobile */}
+                  {mobileView && (
+                    console.log("Rendering mobile view", designTeam),
+                    <TeamBanner prop={designTeam} mobile={mobileView} />
+                  )}
+                  {/* desktop  */}
+                  {!mobileView &&
+                    designTeam.map((member) => (
+                      <React.Fragment key={member.id}>
+                        <TeamBanner prop={member} mobile={mobileView} />
+                      </React.Fragment>
+                    ))}
                 </div>
               </div>
 

@@ -9,7 +9,8 @@ interface BannerProps {
   width?: string | number; // Optional width (default: 100%)
   height?: string | number; // Optional height (default: 600px)
   isOpen?: boolean;
-  prop: any; // Controls open/close animation
+  prop: any;
+  mobile?: boolean;
 }
 
 function Banner({
@@ -19,14 +20,15 @@ function Banner({
   width = "100%",
   height = "220px",
   isOpen = true,
-  prop
+  prop,
+  mobile
 }: BannerProps) {
   const bannerRef = useRef<HTMLDivElement>(null);
   const rollEdgeRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLImageElement>(null);
   const [open, setOpen] = React.useState(isOpen);
   const [page, setPage] = React.useState(0);
-  console.log(prop[page].name);
+  console.log(mobile ? prop[page] : prop);
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
@@ -156,7 +158,7 @@ function Banner({
           <div className="absolute w-full h-full flex justify-center items-center overflow-hidden pointer-events-none">
             <img
               ref={photoRef}
-              src={prop[page].image}
+              src={mobile ? prop[page].image : prop.image}
               alt={name}
               className="w-full h-full object-cover z-[2]"
             />
@@ -165,7 +167,7 @@ function Banner({
                 id={`name-${name.replace(/\s+/g, "-")}`}
                 className="text-white font-semibold text-xs sm:text-sm transition-opacity duration-300"
               >
-                {prop[page].name}
+                {mobile ? prop[page].name : prop.name}
               </span>
             </div>
           </div>
