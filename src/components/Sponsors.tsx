@@ -1,12 +1,9 @@
 const Sponsors = () => {
-  // Placeholder sponsor data - replace with actual sponsors
+  // Sponsor data with actual logos
   const sponsors = [
-    { name: "TechCorp", logo: "TC" },
-    { name: "InnovateLab", logo: "IL" }, 
-    { name: "DigitalForge", logo: "DF" },
-    { name: "CyberSystems", logo: "CS" },
-    { name: "FutureCode", logo: "FC" },
-    { name: "NextGen", logo: "NG" },
+    { name: "EcoPuls", logo: "/ecopuls-logo.jpg" },
+    { name: "Caddam Software Solutions", logo: "/caddam-logo.jpg" }, 
+    
   ];
 
   return (
@@ -20,18 +17,22 @@ const Sponsors = () => {
             Powered by industry leaders who believe in pushing the boundaries of innovation.
           </p>
         </div>
-
-        {/* Sponsors Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 ">
           {sponsors.map((sponsor, index) => (
             <div
               key={index}
               className="group flex items-center justify-center p-6 border border-border rounded-lg hover:border-primary/50 transition-all duration-300 hover:bg-primary/5"
             >
-              {/* Placeholder Logo */}
-              <div className="w-16 h-16 bg-card border border-border rounded-lg flex items-center justify-center font-cyber text-sm text-muted-foreground group-hover:text-primary group-hover:border-primary/50 transition-all duration-300">
-                {sponsor.logo}
-              </div>
+
+        {/* Sponsors Grid */}
+              {/* Sponsor Logo */}
+              
+                <img 
+                  src={sponsor.logo} 
+                  alt={`${sponsor.name} logo`}
+                  className="w-full h-full object-contain p-2"
+                />
+              
             </div>
           ))}
         </div>
